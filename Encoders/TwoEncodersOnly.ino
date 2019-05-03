@@ -32,14 +32,14 @@ PORTL: 42 43 44 45 16 47 48 49
 
 volatile bool _LeftEncoderASet;
 volatile bool _LeftEncoderBSet;
-volatile bool _LeftEncoderAPrev;
-volatile bool _LeftEncoderBPrev;
+volatile bool _LeftEncoderAPrev =0;
+volatile bool _LeftEncoderBPrev =0;
 volatile long _LeftEncoderTicks = 0;
 
 volatile bool _RightEncoderASet;
 volatile bool _RightEncoderBSet;
-volatile bool _RightEncoderAPrev;
-volatile bool _RightEncoderBPrev;
+volatile bool _RightEncoderAPrev =0;
+volatile bool _RightEncoderBPrev =0;
 volatile long _RightEncoderTicks = 0;
 
 volatile  byte leftLedState = LOW;
@@ -123,6 +123,7 @@ int ParseLeftEncoder(){
     if(_LeftEncoderASet && _LeftEncoderBSet) return 1;
     if(!_LeftEncoderASet && !_LeftEncoderBSet) return -1;
   }
+       return 0;
 }
 
 int ParseRightEncoder(){
@@ -147,4 +148,5 @@ int ParseRightEncoder(){
     if(_RightEncoderASet && _RightEncoderBSet) return 1;
     if(!_RightEncoderASet && !_RightEncoderBSet) return -1;
   }
+       return 0;
 }
