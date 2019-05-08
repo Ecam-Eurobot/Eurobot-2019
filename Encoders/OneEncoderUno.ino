@@ -20,8 +20,8 @@
 
 volatile bool _LeftEncoderASet;
 volatile bool _LeftEncoderBSet;
-volatile bool _LeftEncoderAPrev;
-volatile bool _LeftEncoderBPrev;
+volatile bool _LeftEncoderAPrev=0;
+volatile bool _LeftEncoderBPrev=0;
 volatile long _LeftEncoderTicks = 0;
 
 void setup()
@@ -87,4 +87,5 @@ int ParseEncoder(){
     if(_LeftEncoderASet && _LeftEncoderBSet) return 1;
     if(!_LeftEncoderASet && !_LeftEncoderBSet) return -1;
   }
+  return 0;
 }
