@@ -26,21 +26,21 @@ PORTL: 42 43 44 45 16 47 48 49
 #define c_LeftEncoderPinA 2 // PORTE4
 #define c_LeftEncoderPinB 3// PORTE5
 #define c_RightEncoderPinA 19 // PORTD2
-#define c_RightEncoderPinB 18// PORTD3
+#define c_RightEncoderPinB 20// PORTD3
 
 #define leftLed 4 // PORTH6
 #define rightLed 5 // PORTH5
 
 volatile bool _LeftEncoderASet;
 volatile bool _LeftEncoderBSet;
-volatile bool _LeftEncoderAPrev;
-volatile bool _LeftEncoderBPrev;
+volatile bool _LeftEncoderAPrev=0;
+volatile bool _LeftEncoderBPrev=0;
 volatile long _LeftEncoderTicks = 0;
 
 volatile bool _RightEncoderASet;
 volatile bool _RightEncoderBSet;
-volatile bool _RightEncoderAPrev;
-volatile bool _RightEncoderBPrev;
+volatile bool _RightEncoderAPrev=0;
+volatile bool _RightEncoderBPrev=0;
 volatile long _RightEncoderTicks = 0;
 
 volatile  byte leftLedState = LOW;
@@ -53,7 +53,7 @@ bool dir_motor_l;
 
 // Init motors
 const byte pwm_motor1 = 10;
-const byte dir_motor1 = 12;
+const byte dir_motor1 = 7;
 bool dir_motor_r;
 
 //Init PID
@@ -108,22 +108,16 @@ void setup()
 
 void loop()
 {
-  //Asservissement en position linéaire
-  //int setpoint_lin = analogRead(PIN_setpoint_lin_LIN);
   int ts = micros();
   int vitesse = myPID.step(setpoint, ((_LeftEncoderTicks + _RightEncoderTicks)/2));
   int tss = micros();
 
   dir_motor_l = 0;
   dir_motor_r = 0;
+       
   if (vitesse < 0){
    vitesse = 0;
   }
-  //if (vitesse < 0){
-  //  vitesse = -vitesse;
-  //  dir_motor_l = 1;
-  //  dir_motor_r = 1;
-  //}
   if(vitesse > 255) vitesse = 255;  // adapter le 255 selon le PWM
   digitalWrite(dir_motor1, 0);
   digitalWrite(dir_motor2, 0);
@@ -139,9 +133,6 @@ void loop()
   //Serial.print(_RightEncoderTicks);
   Serial.print("  Revolutions: ");
   Serial.print(_RightEncoderTicks/4000.0);//4000 Counts Per Revolution
-  //Serial.print("\n");
-  //Serial.print("(Fast) micros: "); 
-  //Serial.print(tss - ts);
   Serial.print(" sp: "); 
   Serial.print(setpoint); 
   Serial.print(" fb: "); 
@@ -190,6 +181,7 @@ int ParseLeftEncoder(){
     if(_LeftEncoderASet && _LeftEncoderBSet) return 1;
     if(!_LeftEncoderASet && !_LeftEncoderBSet) return -1;
   }
+       return 0;
 }
 
 int ParseRightEncoder(){
@@ -214,4 +206,5 @@ int ParseRightEncoder(){
     if(_RightEncoderASet && _RightEncoderBSet) return 1;
     if(!_RightEncoderASet && !_RightEncoderBSet) return -1;
   }
+       return 0;
 }
