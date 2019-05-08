@@ -1,6 +1,6 @@
 
 const byte pwm_motor2 = 9;
-const byte dir_motor2 = 10;
+const byte dir_motor2 = 11;
 
 void setup() {
   //set level pins
@@ -14,5 +14,5 @@ void setup() {
 
 void loop() {
   digitalWrite(dir_motor2, 0);
-  analogWrite(pwm_motor2, 255);
+  analogWrite(pwm_motor2, 200);
 }
