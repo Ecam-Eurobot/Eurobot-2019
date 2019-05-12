@@ -29,7 +29,7 @@ White --> GND
 Transparent --> Shield/Housing
 
 We decided to plug the wire on this way for all the encoders:
-![](imageDoc/Encoder3.png)
+![](imageDoc/encoder3.png)
 ![](imageDoc/Encoder3b.png)
  
 To facilitate the wiring, we made a PCB to connect the encoder to the Arduino Mega. Here the pin mapping of the encoders:
@@ -47,6 +47,6 @@ We also soldered two LEDs that allow us to verify that the encoders move the cod
 
 You can see how we connect the shield to the H-bridge. 
 
-![](imageDoc/HBridge.png)
+![](imageDoc/HBridge.jpg)
 
 Warning!! This documentation is only for the new version of the PCB not the old one!
