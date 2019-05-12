@@ -1,13 +1,13 @@
 # Encoders
 An incremental encoder delivers a certain number of pulses per revolution. The number of pulses is a measure for angular or linear movement. A fixed disc on a shaft is divided into transparent and opaque segments
 
-![](imagedoc/Encoder1.png)
+![](imageDoc/Encoder1.png)
 
 Source : https://instrumentationtools.com/encoder-working-principle/
 
 Most of them have two rows of segments (track A and track B) and a Top Z segment. The two tracks out of phase by 90° indicate the direction of rotation, while the top Z indicates the number of revolutions.
 
- ![](imagedoc/Encoder2.png)
+ ![](imageDoc/Encoder2.png)
 
 Their resolution is the maximum number of pulses it sends per turn, it is expressed in tick/tr (in the encoder that we use we have 4000 ticks/tr).
 
@@ -29,8 +29,8 @@ White --> GND
 Transparent --> Shield/Housing
 
 We decided to plug the wire on this way for all the encoders:
-![](imagedoc/Encoder3.png)
-![](imagedoc/Encoder3b.png)
+![](imageDoc/Encoder3.png)
+![](imageDoc/Encoder3b.png)
  
 To facilitate the wiring, we made a PCB to connect the encoder to the Arduino Mega. Here the pin mapping of the encoders:
 
@@ -43,10 +43,10 @@ On the shield we have two connectors for the encoders, one connector to plug wit
 
 We also soldered two LEDs that allow us to verify that the encoders move the code and perform the position calculation.
 
-![](imagedoc/Shield1.png)
+![](imageDoc/Shield1.png)
 
 You can see how we connect the shield to the H-bridge. 
 
-![](imagedoc/HBridge.png)
+![](imageDoc/HBridge.png)
 
 Warning!! This documentation is only for the new version of the PCB not the old one!
