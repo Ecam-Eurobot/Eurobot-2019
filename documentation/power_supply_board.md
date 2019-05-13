@@ -2,7 +2,7 @@
 
 This PCB is consisted of six pieces of   DC-DC Power Supply Adjustable Step Down Module with an adjustable potentiometer to fix the value of the voltage wanted (24V 12V 9V 5V 3V). 
 
- ![Image of Yaktocat](img/3.png)
+ ![Image ](img/3.png)
 
 
 Those are Mini MP1584EN DC DC buck converter step-down module with a wide range of: 
@@ -23,7 +23,7 @@ Those are Mini MP1584EN DC DC buck converter step-down module with a wide range 
 
     - Size: 22 mm by 17 mm by 4 mm 
 
- ![Image of Yaktocat](img/4.png)
+ ![Image ](img/4.png)
 
  ### Warning:  
 
@@ -36,13 +36,13 @@ The Purpose of the creation of this board is to realize a better power supply bo
     - Gathering all those 6 pieces on one board with different output voltage 
 
  
-![Image of Yaktocat](img/5.png)
+![Image ](img/5.png)
  
 
     - Rearranging their outputs in such a way the + and the – become side by side so it is easier to be plugged by the user. Also creating an USB port output for the Arduino. 
 
     - Adding protection to the Board using fuses at the entrance of each PCB (the fuses must be with different values depending on the value putted on the potentiometer). 
-![Image of Yaktocat](img/6.png)
+![Image ](img/6.png)
   
 
  
@@ -50,11 +50,11 @@ The Purpose of the creation of this board is to realize a better power supply bo
 
 ## 3D PCB: 
 
- ![Image of Yaktocat](img/7.png)
+ ![Image ](img/7.png)
 
 - This is the final power supply board with its new outputs including USB port output and its protection: 
 
- ![Image of Yaktocat](img/8.png)
+ ![Image ](img/8.png)
 
 
 ### IMPROVEMENT : 
