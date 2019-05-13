@@ -116,13 +116,13 @@ For example to visualize odomotry
 ```
 rosrun rosserial_python serial_node.py /dev/ttyACM0
 ```
-Make sure you use the same arduino serial
+Make sure you use the use  arduino serial
 
 3- Run :  
 ```
 rosrun odom odom
 ```
-4- Run : 
+4- launch rviz : 
 ```
 rviz rviz
 ```
