@@ -90,19 +90,6 @@ To run robot model 2019
 roslaunch robot_description display_soja.launch
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 for more information check this link :
 http://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20File
 
@@ -113,10 +100,11 @@ If you want to  visualize   current configuration on a virtual model of the robo
 
 
 To start running rviz :
+on a first window you type :
 ```
 roscore
 ```
-Open second terminal and write :
+on another window :
 ```  
 rviz rviz
 ```
@@ -165,15 +153,15 @@ map_server <map.yaml>
 rosrun map_server map_server mymap.yaml
 ```
 ###### To run map Eurobot 2019 :
-1-
+1- on a first window you type :
 ```
 roscore
 ```
-2-
+2- on another window :
 ```
 rosrun map_server map_server maps  eurobot-map.yaml
 ```
-3-
+3- on another window :
 ```
 rviz rviz
 ```
