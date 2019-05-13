@@ -1,5 +1,3 @@
-# Documentation
-
 This part contains the documentation on:
 
   - Total match time with ROS
