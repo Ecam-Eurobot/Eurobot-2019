@@ -39,9 +39,12 @@ The Purpose of the creation of this board is to realize a better power supply bo
 ![Image ](img/5.png)
  
 
-    - Rearranging their outputs in such a way the + and the – become side by side so it is easier to be plugged by the user. Also creating an USB port output for the Arduino. 
+- Rearranging their outputs in such a way the + and the – become side by side so it is easier to be plugged by the user.
+ Also creating an USB port output for the Arduino. 
 
-    - Adding protection to the Board using fuses at the entrance of each PCB (the fuses must be with different values depending on the value putted on the potentiometer). 
+- Adding protection to the Board using fuses at the entrance of each PCB 
+(the fuses must be with different values depending on the value putted on the potentiometer). 
+
 ![Image ](img/6.png)
   
 
@@ -59,5 +62,6 @@ The Purpose of the creation of this board is to realize a better power supply bo
 
 ### IMPROVEMENT : 
 
-    For better protection to our power supply board we can improve our protection by adding a freewheeling diode to protect the board in case  the battery terminals are inverted. 
+For better protection to our power supply board we can improve our protection by adding a
+freewheeling diode to protect the board in case  the battery terminals are inverted. 
 
