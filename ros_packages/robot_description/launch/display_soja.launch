@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+     <arg name="viz" default="true" />
+    <arg name="model" default="$(find robot_description)/urdf/soja.xacro"/>
+    <arg name="gui" default="true" />
+    <arg name="rvizconfig" default="$(find robot_description)/rviz/rviz.rviz" />
+
+    <param name="use_gui" value="$(arg gui)"/>
+
+     <!-- change this next line to include the launch file for your robot's hardware drivers: -->
+  <!--node pkg="rosserial_python" type="serial_node.py" args="/dev/ttyACM0" name="serial_node0" respawn="true">
+    <param name="baud" value="57600" />
+  </node-->
+  <!--<node pkg="rosserial_python" type="serial_node.py" args="/dev/ttyACM1" name="serial_node1" respawn="true">
+    <param name="baud" value="57600" />
+  </node> >
+  <rosparam param="ticks_meter">16400</rosparam-->
+  
+    <!-- map-->
+     <include file="$(find maps)/launch/map_launch.launch" />
+	    <!-- Robot description -->
+     <rosparam command="load" file="$(find robot_2019)/param/wheel.yaml" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+
+     <!-- Simulation -->
+    <!--group if="$(arg simulate_motors)">
+        <node name="motor_sim" pkg="motor_simulation" type="motor_sim.py" />
+    </group-->
+
+    <!-- Motion -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+     <!-- Visualization -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+</launch>
