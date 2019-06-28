@@ -1,0 +1,14 @@
+<launch>
+    <arg name="viz" default="true" />
+     <arg name="rvizconfig" default="$(find maps)/rviz/rviz.rviz" />
+
+    <arg name="map_file" default="$(find maps)/map/eurobot-map.yaml" />
+
+    <node name="map_server1" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+
+
+<!-- Visualization -->
+
+
+</launch>
